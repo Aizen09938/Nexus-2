@@ -1,0 +1,77 @@
+GetService('Players').LocalPlayer
+local folderData = game.ReplicatedStorage.Datas[yo.UserId]
+local afk = game:service'VirtualUser'
+local statsRequeridosFarm = 0
+local events = game.ReplicatedStorage.Package.Events
+local equipRemote = game:GetService("ReplicatedStorage").Package.Events.equipskill 
+local cargaAndBloqueo = true
+local activadaSpeed = false
+Local statsPlayerFarmSa = {
+sa = 0,
+farm = 0,
+experiencia = 0
+}
+
+
+print('nuevo script BY HEISENBERG, si usas mi script sabes que soy la verga');
+
+local millon = 1000000
+local arregloAtaques = {
+	{name = "God Slicer",requerido = millon * 60},
+	{name = "Spirit Barrage",requerido = millon * 60},
+	{name = "Super Dragon Fist",requerido = millon * 50},
+	{name = "Flash Kick",requerido = millon / 2},
+	{name = "Spirit Breaking Cannon",requerido = 200000},
+	{name = "Mach Kick",requerido = 90000},
+	{name = "High Power Rush",requerido = 65000},
+	{name = "Meteor Crash",requerido = 28000},
+	{name = "Wolf Fang Fist",requerido = 2000},
+}
+local ataquesEnergy = {
+	{name = 'Soul Punisher',subName = 'Hak',fuerza = 40000000},
+	{name = 'Destruction',subName = 'Hak',fuerza = 40000000},
+	{name = 'Energy Volley',subName = 'voleys',fuerza = 4000},
+}
+
+local multiQuest = {"X Fighter Trainer", 0,"Earth"},-- X Fighter EXP: 700
+    {"Turtle Student", 500,"Earth"}, -- EXP: 1900
+    {"Klirin", 1400,"Earth"}, -- EXP: 1000
+    {"Roshi", 3500,"Earth"}, -- EXP: 1000
+    {"Kid Nohag", 7200,"Earth"}, --  EXP: 1400
+    --{"Wukong", 50000,"Earth"}, --  EXP: 
+    --{"Nohag", 50000,"Earth"}, 
+--    {"Winter Wukong", 150000000 * 1.5,"Earth"}, 
+    
+    --{"Winter Nohag", 6500000 * 1,2, "Earth"},
+    {"Radish", 14000,"Earth"}, -- EXP: 2500
+    {"Mapa", 32000,"Earth"}, -- EXP: 3100
+    {"Vegetable(Saya Saga)", 80000,"Earth"}, -- EXP: 6000
+    {"Lord Sloog", 180000,"Earth"}, -- EXP: 6000
+    {"Citizen", 300000,"Earth"},-- Evil saiyans EXP: 4000
+    --{"Top X Fighter", 450000,"Earth"},-- X Fighter Master EXP: 5000
+    --{"Super Vegetable", 750000,"Earth"}, -- EXP: 6000
+    --{"Kaio Student", 1100000,"Earth"},
+    {"Chilly", 900000,"Earth"},
+    {"No. 17", 2700000,"Earth"},
+    {"Perfect Atom", 5000000,"Earth"},
+    {"Z Broccoli", 18000000,"Earth"},
+    {"Super Boo", 45000000,"Earth"},
+    {"Kakata(SSJ)", 150000000,"Earth"},
+    {"Vills(1%)", 340000000,"Earth"},
+    {"Omega Shenlong", 550000000,"Earth"},
+    {"Gold Chilly", 2000000000,"Earth"},
+    {"Merged Zamas", 6200000000,"Earth"},
+    --{"SSJ2 Wukong", 5000000,"Earth"},
+    --{"Wukong Black", 5000000,"Earth"},
+    --{"Kai-fist Master", 6500000,"Earth"},
+    {"Broccoli", 15000000000,"Earth"},
+
+    {"Vis (Vills Planet)", 30000000000,"Earth"}, --// EXP
+    {"Jiran the Gray", 60000000000,"Vills Planet"},
+    {"Vegetable (Ultra Ego)", 300000000000,"Vills Planet"},
+    {"Black Frieza", 1000000000000,"Vills Planet"},
+    {"Vills (True God of Destruction)", 3500000000000,"Vills Planet"},
+    {"Vis (Ultra Instinct)", 12500000000000,"Vills Planet"},
+    {"Xicor", 80000000000000,"Vills Planet"},
+    {"Wukong (SSJB3)", 450000000000000,"Vills Planet"},
+    {"Kakata (Ego Instinct)", 2000000000000000,"Vills Planet"},
